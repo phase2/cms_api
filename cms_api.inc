@@ -115,7 +115,7 @@ function _cms_api_get_section_section($section) {
   static $sections = array();
 
   if (empty($sections[$section])) {
-    if ($section_cache = cache_get("ELC::CMS::API::SECTION::$section")) {
+    if ($section_cache = cache_get("CMS::API::SECTION::$section")) {
       $sections[$section] = $section_cache->data;
     }
     else {
@@ -156,6 +156,7 @@ function _cms_api_get_get_section_page($url = '') {
       global $language;
       drupal_add_http_header('Content-Language', $language->language);
       $page_html = drupal_render_page($page_array);
+      cache_set("CMS::API::PAGE::$url", $page_html);
 
       $_GET['q'] = $orig_path;
 
