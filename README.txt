@@ -27,3 +27,4 @@ cms-api/region/<region name>
 
 cms-api/section/<section_name>
 - The HTML for the <div> from the sites home page
+- For example, getting the header region since lots of this is hard coded in page.tpl.php
