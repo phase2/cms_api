@@ -1,0 +1,5 @@
+name = CMS API
+description = A generic simple JSON API into Drupal
+
+dependencies[] = libraries
+core = "7.x"

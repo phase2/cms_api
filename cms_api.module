@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function cms_api_menu() {
+  $items['cms-api/%'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'cms_api_get',
+    'page arguments' => array(1),
+    'file' => 'cms_api.inc',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
